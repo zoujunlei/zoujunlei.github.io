@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,                               @&quot;3&quot;,                               @&quot;4&quot;">
+<meta name="description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&amp;quot;1&amp;quot;,                               @&amp;quot;2&amp;quot;,                               @&amp;quot;3&amp;quot;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UISegmentedControl">
 <meta property="og:url" content="http://yoursite.com/2014/08/21/UISegmentedControl/index.html">
 <meta property="og:site_name" content="邹俊磊Blog">
-<meta property="og:description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,                               @&quot;3&quot;,                               @&quot;4&quot;">
+<meta property="og:description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&amp;quot;1&amp;quot;,                               @&amp;quot;2&amp;quot;,                               @&amp;quot;3&amp;quot;,">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-08-21T15:43:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UISegmentedControl">
-<meta name="twitter:description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,                               @&quot;3&quot;,                               @&quot;4&quot;">
+<meta name="twitter:description" content="UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&amp;quot;1&amp;quot;,                               @&amp;quot;2&amp;quot;,                               @&amp;quot;3&amp;quot;,">
 
 
 
@@ -377,7 +377,7 @@
       
 
       
-        <h1 id="UISegmentedContro"><a href="#UISegmentedContro" class="headerlink" title="UISegmentedContro"></a>UISegmentedContro</h1><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *segmentArray = @[                               <span class="string">@"1"</span>,                               <span class="string">@"2"</span>,                               <span class="string">@"3"</span>,                               <span class="string">@"4"</span>                               ];     </div><div class="line"><span class="comment">// 初始化UISegmentedControl     </span></div><div class="line"><span class="built_in">UISegmentedControl</span> *segmentControl = [[<span class="built_in">UISegmentedControl</span> alloc] initWithItems:segmentArray];     </div><div class="line">segmentControl.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">self</span>.view.frame.size.width - <span class="number">20</span>, <span class="number">30</span>);     </div><div class="line">segmentControl.center = <span class="keyword">self</span>.view.center;     </div><div class="line"><span class="comment">// 设置默认选择项索引     </span></div><div class="line">segmentControl.selectedSegmentIndex = <span class="number">2</span>;     </div><div class="line">segmentControl.tintColor = [<span class="built_in">UIColor</span> redColor];     </div><div class="line"><span class="comment">// 设置在点击后是否恢复原样     </span></div><div class="line">segmentControl.momentary = <span class="literal">YES</span>;</div><div class="line">[<span class="keyword">self</span>.view addSubview:segmentControl];</div></pre></td></tr></table></figure>
+        <h1 id="UISegmentedContro"><a href="#UISegmentedContro" class="headerlink" title="UISegmentedContro"></a>UISegmentedContro</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,                               @&quot;3&quot;,                               @&quot;4&quot;                               ];     </div><div class="line">// 初始化UISegmentedControl     </div><div class="line">UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentArray];     </div><div class="line">segmentControl.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, 30);     </div><div class="line">segmentControl.center = self.view.center;     </div><div class="line">// 设置默认选择项索引     </div><div class="line">segmentControl.selectedSegmentIndex = 2;     </div><div class="line">segmentControl.tintColor = [UIColor redColor];     </div><div class="line">// 设置在点击后是否恢复原样     </div><div class="line">segmentControl.momentary = YES;</div><div class="line">[self.view addSubview:segmentControl];</div></pre></td></tr></table></figure>
 
       
     </div>
