@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="#图片添加文字12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;//">
+<meta name="description" content="#图片添加文字 12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIimage">
 <meta property="og:url" content="http://yoursite.com/2015/02/24/UIimage/index.html">
 <meta property="og:site_name" content="邹俊磊Blog">
-<meta property="og:description" content="#图片添加文字12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;//">
+<meta property="og:description" content="#图片添加文字 12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T16:18:18.000Z">
+<meta property="og:updated_time" content="2017-08-21T16:20:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIimage">
-<meta name="twitter:description" content="#图片添加文字12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;//">
+<meta name="twitter:description" content="#图片添加文字 12345678910111213141516171819202122232425262728293031323334- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&amp;#123;CGFloatw = bigImage.size.width;CGFloath = bigImage.size.height;/">
 
 
 
@@ -366,7 +366,8 @@
       
 
       
-        <p>#图片添加文字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&#123;</div><div class="line">CGFloatw = bigImage.size.width;</div><div class="line">CGFloath = bigImage.size.height;</div><div class="line">//bitmap上下文使用的颜色空间</div><div class="line">CGColorSpaceRefcolorSpace =CGColorSpaceCreateDeviceRGB();</div><div class="line"></div><div class="line">//绘制图形上下文</div><div class="line">CGContextRefref =CGBitmapContextCreate(NULL, w, h,8,444* bigImage.size.width, colorSpace,kCGImageAlphaPremultipliedFirst);</div><div class="line"></div><div class="line">//给bigImage画图 CGContextDrawImage(ref,CGRectMake(0,0, w, h), bigImage.CGImage);</div><div class="line">CGContextDrawImage(ref,CGRectMake(w -100,100, image.size.width, image.size.height), image.CGImage);</div><div class="line">//合成图片</div><div class="line">CGImageRefimageMasked = CGBitmapContextCreateImage(ref);</div><div class="line"></div><div class="line">//关闭图形上下文</div><div class="line">CGContextClosePath(ref); CGColorSpaceRelease(colorSpace);</div><div class="line">return [UIImageimageWithCGImage:imageMasked];</div><div class="line">&#125;</div><div class="line">图片上添加图片,用于给图片添加水印</div><div class="line"></div><div class="line">- (UIImage*)convertImageFromeView:(UIView*)view&#123;</div><div class="line">NSLog(@&quot;%f&quot;, [UIScreenmainScreen].scale);</div><div class="line">//不加scale图片截屏会模糊 UIGraphicsBeginImageContextWithOptions(view.size,NO, [UIScreenmainScreen].scale);</div><div class="line">//绘制图形上下文</div><div class="line">CGContextRefref =UIGraphicsGetCurrentContext();</div><div class="line">[view.layerrenderInContext:ref];</div><div class="line">UIImage*image =UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">//获取固定位置的图片(上面部分完成截屏功能,下面代码可不要)</div><div class="line">CGImageRefimageRef =CGImageCreateWithImageInRect(image.CGImage,CGRectMake(200,300,100,100));</div><div class="line">UIImage*img = [UIImageimageWithCGImage:imageRef];</div><div class="line">UIGraphicsEndImageContext();</div><div class="line">UIImageWriteToSavedPhotosAlbum(img,self,nil,nil);</div><div class="line">returnimg;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>#图片添加文字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">- (UIImage*)image:(UIImage*)image addToImage:(UIImage*)bigImage&#123;</div><div class="line">CGFloatw = bigImage.size.width;</div><div class="line">CGFloath = bigImage.size.height;</div><div class="line">//bitmap上下文使用的颜色空间</div><div class="line">CGColorSpaceRefcolorSpace =CGColorSpaceCreateDeviceRGB();</div><div class="line"></div><div class="line">//绘制图形上下文</div><div class="line">CGContextRefref =CGBitmapContextCreate(NULL, w, h,8,444* bigImage.size.width, colorSpace,kCGImageAlphaPremultipliedFirst);</div><div class="line"></div><div class="line">//给bigImage画图 CGContextDrawImage(ref,CGRectMake(0,0, w, h), bigImage.CGImage);</div><div class="line">CGContextDrawImage(ref,CGRectMake(w -100,100, image.size.width, image.size.height), image.CGImage);</div><div class="line">//合成图片</div><div class="line">CGImageRefimageMasked = CGBitmapContextCreateImage(ref);</div><div class="line"></div><div class="line">//关闭图形上下文</div><div class="line">CGContextClosePath(ref); CGColorSpaceRelease(colorSpace);</div><div class="line">return [UIImageimageWithCGImage:imageMasked];</div><div class="line">&#125;</div><div class="line">图片上添加图片,用于给图片添加水印</div><div class="line"></div><div class="line">- (UIImage*)convertImageFromeView:(UIView*)view&#123;</div><div class="line">NSLog(@&quot;%f&quot;, [UIScreenmainScreen].scale);</div><div class="line">//不加scale图片截屏会模糊 UIGraphicsBeginImageContextWithOptions(view.size,NO, [UIScreenmainScreen].scale);</div><div class="line">//绘制图形上下文</div><div class="line">CGContextRefref =UIGraphicsGetCurrentContext();</div><div class="line">[view.layerrenderInContext:ref];</div><div class="line">UIImage*image =UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">//获取固定位置的图片(上面部分完成截屏功能,下面代码可不要)</div><div class="line">CGImageRefimageRef =CGImageCreateWithImageInRect(image.CGImage,CGRectMake(200,300,100,100));</div><div class="line">UIImage*img = [UIImageimageWithCGImage:imageRef];</div><div class="line">UIGraphicsEndImageContext();</div><div class="line">UIImageWriteToSavedPhotosAlbum(img,self,nil,nil);</div><div class="line">returnimg;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -400,6 +401,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/02/Http/" rel="prev" title="Http">
+                Http <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -467,7 +472,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -478,7 +483,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
