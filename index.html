@@ -368,14 +368,18 @@
       
         
           
-            <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><blockquote>
-<p>1.NSThread<br>2.GCD<br>3.NSOperation和NSOperationQueue</p>
-</blockquote>
-<h1 id="NSThread"><a href="#NSThread" class="headerlink" title="NSThread"></a>NSThread</h1><p>1.NSThread  是轻量级的多线程方法，但是因为需要自己管理线程的生命周期，线程同步。经常使用NSThread进行调试，在实际项目中不推荐使用。<br>创建、启动线程<br>(1) NSThread <em>thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];<br>[thread start];<br>// 线程一启动，就会在线程thread中执行self的run方法<br>//获取当前线程NSThread</em>current = [NSThreadcurrentThread];//获取主线程NSThread*main = [NSThreadmainThread];</p>
-<p>#GCD<br>2.GCD是基于C语言底层API实现的一套多线程并发机制，非常的灵活方便，在实际的开发中使用很广泛。<br>简单来说CGD就是把操作放在队列中去执行。<br>你只需定义好操作和队列就可以了，不需要直接控制线程的创建和销毁，线程的生命周期由队列来管理。<br>GCD的优势<br>GCD是苹果公司为多核的并行运算提出的解决方案 GCD会自动利用更多的CPU内核（比如双核、四核）<br>GCD会自动管理线程的生命周期（创建线程、调度任务、销毁线程）<br>程序员只需要告诉GCD想要执行什么任务，不需要编写任何线程管理代码<br>三、执行任务<br>1.GCD中有2个用来执行任务的函数<br>说明：把右边的参数（任务）提交给左边的参数（队列）进行执行。<br>（1）用同步的方式执行任务 dispatch_sync(dispatch_queue_t queue, dispatch_block_t block);<br>参数说明：<br>queue：队列<br>block：任务<br>（2）用异步的方式执行任务 dispatch_async(dispatch_queue_t queue, dispatch_block_t block);<br>2.同步和异步的区别<br>同步：在当前线程中执行<br>异步：在另一条线程中执行<br>//创建串行队列dispatch_queue_tq = dispatch_queue_create(“my_serial_queue”, DISPATCH_QUEUE_SERIAL);//创建并行队列dispatch_queue_tq = dispatch_queue_create(“my_concurrent_queue”, DISPATCH_QUEUE_CONCURRENT);</p>
-<p>my_serial_queue和my_concurrent_queue是队列的名字标签，为了与其他的队列区分，在一个项目里面必须是唯一的。<br>DISPATCH_QUEUE_SERIAL表示串行队列<br>DISPATCH_QUEUE_CONCURRENT表示并行队列</p>
+          线程
+1.NSThread2.GCD3.NSOperation和NSOperationQueue
 
-          
+NSThread1.NSThread  是轻量级的多线程方法，但是因为需要自己管理线程的生命周期，线程同步。经常使用NSThread进行调试，在实际项目中不推荐使用。创建、启动线程(1) NSThre
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/02/21/NSThread-GCD-NSOperation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -526,9 +530,15 @@
       
         
           
-            <h1 id="UISegmentedContro"><a href="#UISegmentedContro" class="headerlink" title="UISegmentedContro"></a>UISegmentedContro</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,                               @&quot;3&quot;,                               @&quot;4&quot;                               ];     </div><div class="line">// 初始化UISegmentedControl     </div><div class="line">UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentArray];     </div><div class="line">segmentControl.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, 30);     </div><div class="line">segmentControl.center = self.view.center;     </div><div class="line">// 设置默认选择项索引     </div><div class="line">segmentControl.selectedSegmentIndex = 2;     </div><div class="line">segmentControl.tintColor = [UIColor redColor];     </div><div class="line">// 设置在点击后是否恢复原样     </div><div class="line">segmentControl.momentary = YES;</div><div class="line">[self.view addSubview:segmentControl];</div></pre></td></tr></table></figure>
-
-          
+          UISegmentedContro1234567891011NSArray *segmentArray = @[                               @&quot;1&quot;,                               @&quot;2&quot;,  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/08/21/UISegmentedControl/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
