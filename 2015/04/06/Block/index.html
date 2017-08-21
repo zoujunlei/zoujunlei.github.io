@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="ARC_MRCARC下和非ARC下的这些区别：http://www.jianshu.com/p/4a1d1921284bassign，retain，strong，weak，unsafe_unretained，还有copy，这些都是一个property在声明中可以指定的属性，且都与内存管理有关。 #MRC在Non-ARC内存管理模式下，assign是一个property的默认属性，无论这个prope">
+<meta name="description" content="防止循环引用__weak ViewController *weakSelf = self;首先，创建两个视图控制器，在第一个视图控制器中创建一个UILabel和一个UIButton，其中UILabel是为了显示第二个视图控制器传过来的字符串，UIButton是为了push到第二个界面。  第二个界面的只有一个UITextField，是为了输入文字，当输入文字，并且返回第一个界面的时候，当第二个视图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARC_MRC">
-<meta property="og:url" content="http://yoursite.com/2014/08/26/ARC-MRC/index.html">
+<meta property="og:title" content="Block">
+<meta property="og:url" content="http://yoursite.com/2015/04/06/Block/index.html">
 <meta property="og:site_name" content="邹俊磊Blog">
-<meta property="og:description" content="ARC_MRCARC下和非ARC下的这些区别：http://www.jianshu.com/p/4a1d1921284bassign，retain，strong，weak，unsafe_unretained，还有copy，这些都是一个property在声明中可以指定的属性，且都与内存管理有关。 #MRC在Non-ARC内存管理模式下，assign是一个property的默认属性，无论这个prope">
+<meta property="og:description" content="防止循环引用__weak ViewController *weakSelf = self;首先，创建两个视图控制器，在第一个视图控制器中创建一个UILabel和一个UIButton，其中UILabel是为了显示第二个视图控制器传过来的字符串，UIButton是为了push到第二个界面。  第二个界面的只有一个UITextField，是为了输入文字，当输入文字，并且返回第一个界面的时候，当第二个视图">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T16:12:31.000Z">
+<meta property="og:updated_time" content="2017-08-21T16:52:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARC_MRC">
-<meta name="twitter:description" content="ARC_MRCARC下和非ARC下的这些区别：http://www.jianshu.com/p/4a1d1921284bassign，retain，strong，weak，unsafe_unretained，还有copy，这些都是一个property在声明中可以指定的属性，且都与内存管理有关。 #MRC在Non-ARC内存管理模式下，assign是一个property的默认属性，无论这个prope">
+<meta name="twitter:title" content="Block">
+<meta name="twitter:description" content="防止循环引用__weak ViewController *weakSelf = self;首先，创建两个视图控制器，在第一个视图控制器中创建一个UILabel和一个UIButton，其中UILabel是为了显示第二个视图控制器传过来的字符串，UIButton是为了push到第二个界面。  第二个界面的只有一个UITextField，是为了输入文字，当输入文字，并且返回第一个界面的时候，当第二个视图">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2014/08/26/ARC-MRC/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/04/06/Block/"/>
 
 
 
 
 
-  <title>ARC_MRC | 邹俊磊Blog</title>
+  <title>Block | 邹俊磊Blog</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/08/26/ARC-MRC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/06/Block/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZJL">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ARC_MRC</h1>
+          <h1 class="post-title" itemprop="name headline">Block</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-08-26T00:01:31+08:00">
-                2014-08-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-06T00:51:40+08:00">
+                2015-04-06
               </time>
             
 
@@ -316,6 +316,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">Knowledge</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -344,23 +366,17 @@
       
 
       
-        <h1 id="ARC-MRC"><a href="#ARC-MRC" class="headerlink" title="ARC_MRC"></a>ARC_MRC</h1><p>ARC下和非ARC下的这些区别：<a href="http://www.jianshu.com/p/4a1d1921284b" target="_blank" rel="external">http://www.jianshu.com/p/4a1d1921284b</a><br>assign，retain，strong，weak，unsafe_unretained，还有copy，这些都是一个property在声明中可以指定的属性，且都与内存管理有关。</p>
-<p>#MRC<br>在Non-ARC内存管理模式下，assign是一个property的默认属性，无论这个property代表一个简单数据类型，还是一个指向对象的指针。也就是说：<br>@property (nonatomic) NSNumber *count;<br>assign主要应用于代表简单数据类型的property，比如int，float等。<br>如果这个用assign属性修饰的property代表一个指向对象的指针，那么当这个指针指向某个对象时，这个对象的引用计数不应该被改变。也就是说，用assign属性修饰的property，不应该持有一个对象。<br>因为这个property不持有对象，所以它所指向的对象很可能已经在别处被释放了。这时它就有可能成为一枚悬垂指针，访问它指向的内存地址时，可能会发生意想不到的状况。</p>
+        <p>防止循环引用<br>__weak ViewController *weakSelf = self;<br>首先，创建两个视图控制器，在第一个视图控制器中创建一个UILabel和一个UIButton，其中UILabel是为了显示第二个视图控制器传过来的字符串，UIButton是为了push到第二个界面。<br>  第二个界面的只有一个UITextField，是为了输入文字，当输入文字，并且返回第一个界面的时候，当第二个视图将要消失的时候，就将第二个界面上TextFiled中的文字传给第一个界面，并且显示在UILabel上。</p>
+<p>一、在第二个视图控制器的.h文件中定义声明Block属性<br>typedef void (^ReturnTextBlock)(NSString *showText);<br>@interface TextFieldViewController : UIViewController<br>@property (nonatomic, copy) ReturnTextBlock returnTextBlock;</p>
 <ul>
-<li>retain</li>
+<li>(void)returnText:(ReturnTextBlock)block;<br>二、实现第二个视图控制器的方法</li>
+<li>(void)returnText:(ReturnTextBlock)block {<br>  self.returnTextBlock = block; }</li>
+<li>(void)viewWillDisappear:(BOOL)animated {<br>if (self.returnTextBlock != nil) {<br>  self.returnTextBlock(self.inputTF.text);         } }</li>
 </ul>
-<p>retain不能修饰用来代表简单数据类型的property，否则编译器会报错：如果一个property被retain修饰，这代表着这个property应该持有它所指向的对象。</p>
-<p>#ARC：<br>strong<br>在ARC内存管理模式下，strong是一个代表对象类型的property的默认属性，并且它不能修饰用来代表简单数据类型的property。编译器在合成实例变量时，将使用__strong修饰符。<br>如果另外自定义了用其他修饰符修饰的实例变量，编译器会报错。可以用这个方法来验证property的各个属性对应的实例变量的所有权修饰符。</p>
+<p>三、在第一个视图中获得第二个视图控制器，并且用第二个视图控制器来调用定义的属性</p>
 <ul>
-<li>unsafe_unretained</li>
+<li>(void)prepareForSegue:(UIStoryboardSegue <em>)segue sender:(id)sender {<br>TextFieldViewController </em>tfVC =segue.destinationViewController;<br>[tfVC returnText:^(NSString *showText) {                    self.showLabel.text = showText;         }]; }</li>
 </ul>
-<p>编译器将为unsafe_unretained修饰的property生成带__unsafe_unretained所有权修饰符的实例变量。<br>与weak和strong不同的是，unsafe_unretained也可以修饰代表简单数据类型的property。<br>assign在ARC内存管理模式下，仍然是代表简单数据类型的property的默认属性。</p>
-<ul>
-<li>weak<br>weak也不能修饰用来代表简单数据类型的property。<br>编译器将为weak修饰的property生成带__weak所有权修饰符的实例变量。</li>
-<li>copy</li>
-</ul>
-<p>copy也不能修饰用来代表简单数据类型的property。<br>编译器将为copy修饰的property生成带__strong所有权修饰符的实例变量。<br>编译器自动合成的setter方法会调用对象的copyWithZone:方法。虽然第三方程序员可以自定义setter方法，但是为了程序的可读性，也应该在其中执行拷贝的逻辑。</p>
-<p>在ARC内存管理模式下，strong是一个代表对象类型的property的默认属性，并且它不能修饰用来代表简单数据类型的property。编译器在合成实例变量时，将使用__strong修饰符。<br>如果另外自定义了用其他修饰符修饰的实例变量，编译器会报错。可以用这个方法来验证property的各个属性对应的实例变量的所有权修饰符。</p>
 
       
     </div>
@@ -385,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/08/21/UISegmentedControl/" rel="next" title="UISegmentedControl">
-                <i class="fa fa-chevron-left"></i> UISegmentedControl
+              <a href="/2015/03/23/键盘消失/" rel="next" title="键盘消失">
+                <i class="fa fa-chevron-left"></i> 键盘消失
               </a>
             
           </div>
@@ -394,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/02/21/NSThread-GCD-NSOperation/" rel="prev" title="NSThread_GCD_NSOperation">
-                NSThread_GCD_NSOperation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -449,17 +461,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -512,22 +515,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ARC-MRC"><span class="nav-number">1.</span> <span class="nav-text">ARC_MRC</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
