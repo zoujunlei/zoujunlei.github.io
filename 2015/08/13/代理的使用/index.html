@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="1234567891011121314//获取字符串的宽度+(float) widthForString:(NSString *)string fontSize:(float)fontSize&amp;#123;    NSDictionary *attrs = @&amp;#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&amp;#125;;">
+<meta name="description" content="代理的作用（传值和传递事件封装）一 传值:传值经常用在b类要把自己的一个数据或者对象传给a类，让a类去展示或者处理。（切分紧耦合，和代码分块的时候经常用）二 传递事件：所谓传事件就是a类发生了什么事，把这件事告诉关注自己的人，也就是委托的对象，由委托的对象去考虑发生这个事件后应该做出什么反映。（这个经常见，例如在异步请求中，界面事件触发数据层改变等等）三 利用委托赋值：这种方法感觉是为了不暴露自己">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算字符串的长度和高度">
-<meta property="og:url" content="http://yoursite.com/2015/04/18/计算字符串的长度和高度/index.html">
+<meta property="og:title" content="代理的使用">
+<meta property="og:url" content="http://yoursite.com/2015/08/13/代理的使用/index.html">
 <meta property="og:site_name" content="邹俊磊Blog">
-<meta property="og:description" content="1234567891011121314//获取字符串的宽度+(float) widthForString:(NSString *)string fontSize:(float)fontSize&amp;#123;    NSDictionary *attrs = @&amp;#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&amp;#125;;">
+<meta property="og:description" content="代理的作用（传值和传递事件封装）一 传值:传值经常用在b类要把自己的一个数据或者对象传给a类，让a类去展示或者处理。（切分紧耦合，和代码分块的时候经常用）二 传递事件：所谓传事件就是a类发生了什么事，把这件事告诉关注自己的人，也就是委托的对象，由委托的对象去考虑发生这个事件后应该做出什么反映。（这个经常见，例如在异步请求中，界面事件触发数据层改变等等）三 利用委托赋值：这种方法感觉是为了不暴露自己">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T17:00:49.000Z">
+<meta property="og:updated_time" content="2017-08-23T11:37:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算字符串的长度和高度">
-<meta name="twitter:description" content="1234567891011121314//获取字符串的宽度+(float) widthForString:(NSString *)string fontSize:(float)fontSize&amp;#123;    NSDictionary *attrs = @&amp;#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&amp;#125;;">
+<meta name="twitter:title" content="代理的使用">
+<meta name="twitter:description" content="代理的作用（传值和传递事件封装）一 传值:传值经常用在b类要把自己的一个数据或者对象传给a类，让a类去展示或者处理。（切分紧耦合，和代码分块的时候经常用）二 传递事件：所谓传事件就是a类发生了什么事，把这件事告诉关注自己的人，也就是委托的对象，由委托的对象去考虑发生这个事件后应该做出什么反映。（这个经常见，例如在异步请求中，界面事件触发数据层改变等等）三 利用委托赋值：这种方法感觉是为了不暴露自己">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/04/18/计算字符串的长度和高度/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/08/13/代理的使用/"/>
 
 
 
 
 
-  <title>计算字符串的长度和高度 | 邹俊磊Blog</title>
+  <title>代理的使用 | 邹俊磊Blog</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/18/计算字符串的长度和高度/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/08/13/代理的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZJL">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算字符串的长度和高度</h1>
+          <h1 class="post-title" itemprop="name headline">代理的使用</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-18T00:59:40+08:00">
-                2015-04-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-13T19:33:43+08:00">
+                2015-08-13
               </time>
             
 
@@ -366,7 +366,11 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//获取字符串的宽度</div><div class="line">+(float) widthForString:(NSString *)string fontSize:(float)fontSize&#123;</div><div class="line">    NSDictionary *attrs = @&#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&#125;;</div><div class="line">    CGSize size=[string sizeWithAttributes:attrs];</div><div class="line">    return size.width;</div><div class="line">&#125;</div><div class="line">//获得字符串的高</div><div class="line">+(float) heightForString:(NSString *)string fontSize:(float)fontSize&#123;</div><div class="line">    NSDictionary *attrs = @&#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&#125;;</div><div class="line">    CGSize size=[string sizeWithAttributes:attrs];</div><div class="line">    return size.height;</div><div class="line">&#125;</div><div class="line">iOS 根据文字的多少计算label宽度</div><div class="line">NSDictionary *attrs = @&#123;NSFontAttributeName : [UIFont boldSystemFontOfSize:17]&#125;; CGSize size=[_itemNamelabel.text sizeWithAttributes:attrs]; [self.itemNamelabel setFrame:CGRectMake(40, 10, size.width, 20)];</div></pre></td></tr></table></figure>
+        <h1 id="代理的作用（传值和传递事件封装）"><a href="#代理的作用（传值和传递事件封装）" class="headerlink" title="代理的作用（传值和传递事件封装）"></a>代理的作用（传值和传递事件封装）</h1><p>一 传值:<br>传值经常用在b类要把自己的一个数据或者对象传给a类，让a类去展示或者处理。（切分紧耦合，和代码分块的时候经常用）<br>二 传递事件：<br>所谓传事件就是a类发生了什么事，把这件事告诉关注自己的人，也就是委托的对象，由委托的对象去考虑发生这个事件后应该做出什么反映。（这个经常见，例如在异步请求中，界面事件触发数据层改变等等）<br>三 利用委托赋值：<br>这种方法感觉是为了不暴露自己的属性就可以给自己复值，而且这样更方便了类的管理，只有在你想要让别人给你赋值的时候才调用，这样的赋值更可控一些。（例如tableView中的委托（dateSource）中常见）。</p>
+<p>#委托</p>
+<p>在IOS中委托通过一种@protocol的方式实现,所以又称为协议.协议是多个类共享的一个方法列表,在协议中所列出的方法没有响应的实现，由其它人来实现.这叫好比我想买个手机，所以我有个buyIphone 方法,但是我不知道谁那买手机,所以把这个需求发布出去(比如公布在网站上),如果有卖手机的商人(也就是说他能实现buyIphone这个方法)看到，他就会接受我的委托,(在商人自己的类中实现<xxxdelegate>),那么我的委托对象就指向了这个商人..当我要买手机的时候，直接找他就行了。</xxxdelegate></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">@protocol MyDelegate</div><div class="line">- (void)buyIphone:(NSString*)iphoneType money:(NSString*)money;</div><div class="line">@end</div><div class="line">@interface My : NSObject&#123;</div><div class="line">    id&lt;MyDelegate&gt; deleage;</div><div class="line">&#125;</div><div class="line">@property(assign,nonatomic) id&lt;MyDelegate&gt; delegate;</div><div class="line">@end</div><div class="line">代码中声明了一个协议 名叫Mydelegate,在其中有一个buyIphone方法，即一个委托项。</div><div class="line">当我要购买手机的时候只需要通过delegate 调用 BuyIphone方法即可。如下:</div><div class="line">-(void)willbuy&#123;</div><div class="line">    [delegate buyIphone:@&quot;iphone 4s&quot; money:@&quot;4888&quot;];</div><div class="line">&#125;</div><div class="line">我不必关心谁现实了这一委托，只要实现了这个委托的类，并且buyIphone是声明的委托中必须实现的方法，那么就一定能够得到结果。</div><div class="line">例如:商人类实现了这一委托(用&lt;Mydelegate&gt;表示实现)</div><div class="line">import &lt;Foundation/Foundation.h&gt;</div><div class="line">import &quot;My.h&quot;</div><div class="line">@interface Business : NSObject&lt;MyDelegate&gt;</div><div class="line">@end然后在 </div><div class="line">@implementation Business 中调用 buyIphone方法</div><div class="line">import &quot;Business.h&quot;</div><div class="line">@implementation Business</div><div class="line">-(void)buyIphone:(NSString*)iphoneType money:(NSString*)money&#123;</div><div class="line">NSLog(@&quot;手机有货，这个价钱卖你了，发货中!!&quot;);</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -390,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/04/10/判断url/" rel="next" title="判断url">
-                <i class="fa fa-chevron-left"></i> 判断url
+              <a href="/2015/08/05/OC与JS的交互/" rel="next" title="OC与JS的交互">
+                <i class="fa fa-chevron-left"></i> OC与JS的交互
               </a>
             
           </div>
@@ -399,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/05/08/截取图片和缩小图片/" rel="prev" title="截取图片和缩小图片">
-                截取图片和缩小图片 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -508,6 +517,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代理的作用（传值和传递事件封装）"><span class="nav-number">1.</span> <span class="nav-text">代理的作用（传值和传递事件封装）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
