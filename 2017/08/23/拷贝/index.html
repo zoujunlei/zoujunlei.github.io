@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="#//千分位1.  (void)setAmount:(NSNumber )amount{  _amount = amount;  NSNumberFormatter formatter = [[NSNumberFormatter alloc] init];  formatter.numberStyle = NSNumberFormatterDecimalStyle;  NSString *fini">
+<meta name="description" content="copy就是内容copy，比如NSString，copy就是新生成了一个对象；但是如果是NSArray，NSDictionary等，copy的是其对象的指针，并没有copy里面的内容，这种也叫做浅拷贝。浅拷贝：拷贝容易本身,返回一个对象,指向相同的内存地址.深层复制：拷贝容器本身,返回一个对象,指向不同的内存地址.例如NSArray、NSDictionary，它们已经实现了上面两个协议。对于它们来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NSNUmbel">
-<meta property="og:url" content="http://yoursite.com/2015/03/09/NSNUmbel/index.html">
+<meta property="og:title" content="拷贝">
+<meta property="og:url" content="http://yoursite.com/2017/08/23/拷贝/index.html">
 <meta property="og:site_name" content="邹俊磊Blog">
-<meta property="og:description" content="#//千分位1.  (void)setAmount:(NSNumber )amount{  _amount = amount;  NSNumberFormatter formatter = [[NSNumberFormatter alloc] init];  formatter.numberStyle = NSNumberFormatterDecimalStyle;  NSString *fini">
+<meta property="og:description" content="copy就是内容copy，比如NSString，copy就是新生成了一个对象；但是如果是NSArray，NSDictionary等，copy的是其对象的指针，并没有copy里面的内容，这种也叫做浅拷贝。浅拷贝：拷贝容易本身,返回一个对象,指向相同的内存地址.深层复制：拷贝容器本身,返回一个对象,指向不同的内存地址.例如NSArray、NSDictionary，它们已经实现了上面两个协议。对于它们来">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T16:32:50.000Z">
+<meta property="og:updated_time" content="2017-08-23T11:16:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NSNUmbel">
-<meta name="twitter:description" content="#//千分位1.  (void)setAmount:(NSNumber )amount{  _amount = amount;  NSNumberFormatter formatter = [[NSNumberFormatter alloc] init];  formatter.numberStyle = NSNumberFormatterDecimalStyle;  NSString *fini">
+<meta name="twitter:title" content="拷贝">
+<meta name="twitter:description" content="copy就是内容copy，比如NSString，copy就是新生成了一个对象；但是如果是NSArray，NSDictionary等，copy的是其对象的指针，并没有copy里面的内容，这种也叫做浅拷贝。浅拷贝：拷贝容易本身,返回一个对象,指向相同的内存地址.深层复制：拷贝容器本身,返回一个对象,指向不同的内存地址.例如NSArray、NSDictionary，它们已经实现了上面两个协议。对于它们来">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/03/09/NSNUmbel/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/23/拷贝/"/>
 
 
 
 
 
-  <title>NSNUmbel | 邹俊磊Blog</title>
+  <title>拷贝 | 邹俊磊Blog</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/09/NSNUmbel/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZJL">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NSNUmbel</h1>
+          <h1 class="post-title" itemprop="name headline">拷贝</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-09T00:30:45+08:00">
-                2015-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T19:16:16+08:00">
+                2017-08-23
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NSnumbel/" itemprop="url" rel="index">
-                    <span itemprop="name">NSnumbel</span>
+                  <a href="/categories/Knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">Knowledge</span>
                   </a>
                 </span>
 
@@ -366,13 +366,7 @@
       
 
       
-        <p>#//千分位<br>1.</p>
-<ul>
-<li>(void)setAmount:(NSNumber <em>)amount<br>{<br>  _amount = amount;<br>  NSNumberFormatter </em>formatter = [[NSNumberFormatter alloc] init];<br>  formatter.numberStyle = NSNumberFormatterDecimalStyle;<br>  NSString *finish = [formatter stringFromNumber:amount];<br>  self.amountLabel.text = finish;<br>}</li>
-</ul>
-<ol>
-<li>+(NSString <em>)setAmount:(NSString </em>)string<br>{<br> NSString <em>numberString= [NSString stringWithFormat:@”%.2f”,[string doubleValue]];<br> NSNumberFormatter </em>numberFormatter = [[NSNumberFormatter alloc] init];<br> [numberFormatter setPositiveFormat:@”###,##0.00;”];<br> NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[numberString doubleValue]]];<br> return formattedNumberString;<br>}</li>
-</ol>
+        <p>copy就是内容copy，比如NSString，copy就是新生成了一个对象；但是如果是NSArray，NSDictionary等，copy的是其对象的指针，并没有copy里面的内容，这种也叫做浅拷贝。<br>浅拷贝：拷贝容易本身,返回一个对象,指向相同的内存地址.<br>深层复制：拷贝容器本身,返回一个对象,指向不同的内存地址.<br>例如NSArray、NSDictionary，它们已经实现了上面两个协议。<br>对于它们来说，规则很简单，obj2 = [obj1 copy]返回的必然是一个不可变对象，无论obj1是可变对象还是不可变对象。如果obj1是一个不可变对象，那么它们指向同一个对象，也是上一条我提到过的。<br>obj2 = [obj1 mutableCopy]返回的必然是一个可变对象，无论obj1是可变对象还是不可变对象。即使obj1也是一个可变对象，它们仍指向不同地址，是两个对象。</p>
 
       
     </div>
@@ -397,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/02/Http/" rel="next" title="Http">
-                <i class="fa fa-chevron-left"></i> Http
+              <a href="/2015/05/23/Date/" rel="next" title="Date">
+                <i class="fa fa-chevron-left"></i> Date
               </a>
             
           </div>
@@ -406,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/12/倒计时实现/" rel="prev" title="倒计时实现">
-                倒计时实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
